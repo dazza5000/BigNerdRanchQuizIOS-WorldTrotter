@@ -24,13 +24,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WorldTrotter/ConversionViewController.swift"
-            timestampString = "549428282.462907"
+            timestampString = "549468317.072516"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "ConversionViewController"
-            landmarkType = "3">
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "dismissKeyboard(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
