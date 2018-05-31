@@ -56,6 +56,7 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="42f-jY-Sk6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="4eO-OD-7QG"/>
                             <constraint firstItem="7Uc-rE-set" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6s7-2A-9bo"/>
@@ -70,12 +71,21 @@
                             <constraint firstItem="sns-73-Ds4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uPU-Mw-Y2f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="pdE-yD-9gW" appends="YES" id="T6W-ez-pqW"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="celsiusLabel" destination="zHM-Sj-PdE" id="682-FV-9Ow"/>
+                        <outlet property="textField" destination="42f-jY-Sk6" id="0XU-Me-fRK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="pdE-yD-9gW">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="l22-aG-JQJ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
