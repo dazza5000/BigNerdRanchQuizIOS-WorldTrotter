@@ -41,6 +41,22 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         updateCelsiusLabel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        // Get the current hour and see if it's past 6
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "HH"
+        if let hour = Int(formatter.string(from: now)) {
+            if hour > 18 || hour < 6 {
+                // originalColor = "F5F4F1"
+                self.view.backgroundColor = UIColor.gray
+            } else {
+                self.view.backgroundColor = UIColor.lightGray
+            }
+        }
+    }
+    
     @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField) {
         if let text = textField.text, let value = Double(text) {
             fahrenheitValue = Measurement(value: value, unit: .fahrenheit)
