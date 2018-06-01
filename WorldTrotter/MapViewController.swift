@@ -24,7 +24,7 @@ class MapViewController: UIViewController {
             = UISegmentedControl(items: ["Standard", "Hybrid", "Satellite"])
         segmentedControl.backgroundColor
             = UIColor.white.withAlphaComponent(0.5)
-        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.selectedSegmentIndex = 0/Users/darrankelinske/Library/Autosave Information/WorldTrotter/WorldTrotter/MapViewController.swift
         
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentedControl)
