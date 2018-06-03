@@ -70,6 +70,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func initLocalizationButton(_ anyView: UIView!){
         let localizationButton = UIButton.init(type: .system)
         localizationButton.setTitle("Show Location", for: .normal)
+        localizationButton.backgroundColor
+            = UIColor.yellow.withAlphaComponent(0.5)
         localizationButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(localizationButton)
         
