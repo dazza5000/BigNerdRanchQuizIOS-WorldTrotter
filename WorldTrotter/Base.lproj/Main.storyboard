@@ -10,6 +10,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--WebView-->
+        <scene sceneID="AQt-xD-86k">
+            <objects>
+                <viewController id="X4e-qs-mrq" customClass="WebViewViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FWk-sq-Vd9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fcK-I0-Lwa">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6Fm-Ep-ht8"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="WebView" id="LUB-WR-sb2"/>
+                    <connections>
+                        <outlet property="view" destination="FWk-sq-Vd9" id="3ck-rR-gvq"/>
+                        <outlet property="webView" destination="fcK-I0-Lwa" id="vq5-ls-kQV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b5s-Qc-gEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873" y="940"/>
+        </scene>
         <!--Convert-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -107,12 +138,14 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gtm-ue-hXx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rNw-3S-zpR">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="dIN-Rw-Oc8"/>
                         <segue destination="cfc-dQ-GgW" kind="relationship" relationship="viewControllers" id="uFm-8Q-seV"/>
+                        <segue destination="X4e-qs-mrq" kind="relationship" relationship="viewControllers" id="wV0-kw-1qL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAL-lF-aNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
