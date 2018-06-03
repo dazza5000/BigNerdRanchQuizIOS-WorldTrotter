@@ -9,9 +9,10 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var mapView: MKMapView!
+    var locationManager: CLLocationManager!
     
     override func loadView() {
         // Create a map view
@@ -48,6 +49,9 @@ class MapViewController: UIViewController {
         leadingConstraint.isActive = true
         trailingConstraint.isActive = true
         
+        mapView.delegate = self
+        locationManager = CLLocationManager()
+        initLocalizationButton(segmentedControl)
     }
     
     @objc func mapTypeChanged(_ segControl: UISegmentedControl) {
@@ -61,5 +65,36 @@ class MapViewController: UIViewController {
         default:
             break;
         }
+    }
+    
+    func initLocalizationButton(_ anyView: UIView!){
+        let localizationButton = UIButton.init(type: .system)
+        localizationButton.setTitle("Show Location", for: .normal)
+        localizationButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(localizationButton)
+        
+        //Constraints
+        
+        let topConstraint = localizationButton.topAnchor.constraint(equalTo:anyView
+            .topAnchor, constant: 32 )
+        let leadingConstraint = localizationButton.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor)
+        let trailingConstraint = localizationButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
+        
+        topConstraint.isActive = true
+        leadingConstraint.isActive = true
+        trailingConstraint.isActive = true
+        
+        localizationButton.addTarget(self, action: #selector(MapViewController.showLocation(sender:)), for: .touchUpInside)
+    }
+    
+    @objc func showLocation(sender: UIButton!){
+        locationManager.requestWhenInUseAuthorization()
+        mapView.userTrackingMode = .follow
+    }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        //This is a method from MKMapViewDelegate, fires up when the user`s location changes
+        let zoomedInCurrentLocation = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 500, 500)
+        mapView.setRegion(zoomedInCurrentLocation, animated: true)
     }
 }
