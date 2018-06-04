@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gtm-ue-hXx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gtm-ue-hXx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,17 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fcK-I0-Lwa">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qPd-El-mAG">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                                <subviews>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcK-I0-Lwa">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qPd-El-mAG" firstAttribute="top" secondItem="6Fm-Ep-ht8" secondAttribute="top" id="SlK-OI-okd"/>
+                            <constraint firstAttribute="trailing" secondItem="qPd-El-mAG" secondAttribute="trailing" id="a01-BL-hRn"/>
+                            <constraint firstItem="qPd-El-mAG" firstAttribute="leading" secondItem="FWk-sq-Vd9" secondAttribute="leading" id="k01-Wt-JzK"/>
+                            <constraint firstItem="qPd-El-mAG" firstAttribute="bottom" secondItem="6Fm-Ep-ht8" secondAttribute="bottom" id="qK5-Tw-T0J"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Fm-Ep-ht8"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="WebView" id="LUB-WR-sb2"/>
@@ -49,8 +59,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sns-73-Ds4">
-                                <rect key="frame" x="64" y="120" width="247" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Fahrenheit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sns-73-Ds4">
+                                <rect key="frame" x="0.0" y="120" width="375" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -92,12 +102,14 @@
                         <constraints>
                             <constraint firstItem="42f-jY-Sk6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="4eO-OD-7QG"/>
                             <constraint firstItem="7Uc-rE-set" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6s7-2A-9bo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sns-73-Ds4" secondAttribute="trailing" id="Ap6-Qm-cTu"/>
                             <constraint firstItem="zHM-Sj-PdE" firstAttribute="top" secondItem="Hrd-xR-Rhh" secondAttribute="bottom" constant="8" id="KRL-ck-mYz"/>
                             <constraint firstItem="sns-73-Ds4" firstAttribute="top" secondItem="42f-jY-Sk6" secondAttribute="bottom" constant="8" id="LI9-Ta-N1Y"/>
                             <constraint firstItem="Hrd-xR-Rhh" firstAttribute="top" secondItem="sns-73-Ds4" secondAttribute="bottom" constant="8" id="MwD-xc-aVq"/>
                             <constraint firstItem="7Uc-rE-set" firstAttribute="top" secondItem="zHM-Sj-PdE" secondAttribute="bottom" constant="8" id="TXG-HO-Xfk"/>
                             <constraint firstItem="42f-jY-Sk6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YOc-fm-UZl"/>
                             <constraint firstItem="42f-jY-Sk6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nqs-2x-I3L"/>
+                            <constraint firstItem="sns-73-Ds4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nzF-Za-QLh"/>
                             <constraint firstItem="zHM-Sj-PdE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tbh-5L-oZR"/>
                             <constraint firstItem="Hrd-xR-Rhh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tph-7u-EAc"/>
                             <constraint firstItem="sns-73-Ds4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uPU-Mw-Y2f"/>
